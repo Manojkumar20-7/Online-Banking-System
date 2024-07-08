@@ -28,34 +28,12 @@ The **Online Banking System** is a console-based application developed in Java u
 ## Installation
 
 1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/your-username/online-banking-system.git
-    ```
 2. **Set Up the Database**
     - Start your MySQL server.
     - Create a database for the project:
-      ```sql
-      CREATE DATABASE banking_system;
-      ```
     - Import the provided SQL script to create the required tables.
-    ```bash
-    mysql -u your-username -p banking_system < path/to/schema.sql
-    ```
 3. **Configure Database Connection**
     - Update the `DBConnection.java` file with your MySQL database credentials.
-    ```java
-    // DBConnection.java
-    String url = "jdbc:mysql://localhost:3306/banking_system";
-    String user = "your-username";
-    String password = "your-password";
-    ```
-
 4. **Build and Run the Application**
     - Compile the project:
-      ```bash
-      javac -cp .:path/to/mysql-connector-java.jar your/package/Main.java
-      ```
     - Run the application:
-      ```bash
-      java -cp .:path/to/mysql-connector-java.jar your.package.Main
-      ```
