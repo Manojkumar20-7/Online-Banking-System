@@ -1,7 +1,6 @@
 package com.kce.bank;
 
 import java.util.Scanner;
-
 import com.kce.bank.bean.Account;
 import com.kce.bank.bean.Customer;
 import com.kce.bank.dao.AccountDAO;
@@ -13,16 +12,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         BankingService bankingService = new BankingService();
         
-        while (true) {
+        while (true) 
+		{
             System.out.println("1. Create Customer");
             System.out.println("2. Create Account");
             System.out.println("3. Deposit");
             System.out.println("4. Withdraw");
             System.out.println("5. Exit");
             int choice = scanner.nextInt();
-            switch (choice) {
+            switch (choice) 
+			{
                 case 1:
-                    // Create Customer
                     System.out.print("Enter name: ");
                     String name = scanner.next();
                     System.out.print("Enter email: ");
@@ -36,7 +36,6 @@ public class Main {
                     new CustomerDAO().addCustomer(customer);
                     break;
                 case 2:
-                    // Create Account
                     System.out.print("Enter customer ID: ");
                     int customerId = scanner.nextInt();
                     System.out.print("Enter account type: ");
@@ -50,7 +49,6 @@ public class Main {
                     new AccountDAO().addAccount(account);
                     break;
                 case 3:
-                    // Deposit
                     System.out.print("Enter account ID: ");
                     int accountId = scanner.nextInt();
                     System.out.print("Enter amount to deposit: ");
@@ -58,7 +56,6 @@ public class Main {
                     bankingService.deposit(accountId, depositAmount);
                     break;
                 case 4:
-                    // Withdraw
                     System.out.print("Enter account ID: ");
                     int withdrawAccountId = scanner.nextInt();
                     System.out.print("Enter amount to withdraw: ");
