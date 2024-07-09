@@ -3,13 +3,13 @@ package com.kce.bank.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import java.sql.SQLException
 import com.kce.bank.bean.Customer;
 import com.kce.bank.util.DatabaseConnection;
 
 public class CustomerDAO {
-	public void addCustomer(Customer customer) {
+	public void addCustomer(Customer customer) 
+	{
         String query = "INSERT INTO customers (name, email, phone) VALUES (?, ?, ?)";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -22,7 +22,8 @@ public class CustomerDAO {
         }
     }
 
-    public Customer getCustomer(int customerId) {
+    public Customer getCustomer(int customerId)
+	{
         Customer customer = null;
         String query = "SELECT * FROM customers WHERE customer_id = ?";
         try (Connection connection = DatabaseConnection.getConnection();
