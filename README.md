@@ -33,7 +33,6 @@ The **Online Banking System** is a console-based application developed in Java u
     - Create a database for the project:
     - Import the provided SQL script to create the required tables.
 3. **Configure Database Connection**
-    - Update the `DBConnection.java` file with your MySQL database credentials.
 4. **Build and Run the Application**
     - Compile the project:
     - Run the application:
