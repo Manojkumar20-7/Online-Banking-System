@@ -19,7 +19,6 @@ public class BankingService {
         if (account != null) {
             double newBalance = account.getBalance() + amount;
             accountDAO.updateBalance(accountId, newBalance);
-            // Add transaction record
             Transaction transaction = new Transaction(accountId, "DEPOSIT", amount);
             transactionDAO.addTransaction(transaction);
         }
@@ -31,7 +30,6 @@ public class BankingService {
             double newBalance = account.getBalance() - amount;
             if (newBalance >= 0) {
                 accountDAO.updateBalance(accountId, newBalance);
-                // Add transaction record
                 Transaction transaction = new Transaction(accountId, "WITHDRAW", amount);
                 transactionDAO.addTransaction(transaction);
             } else {
