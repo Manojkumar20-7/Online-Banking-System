@@ -9,14 +9,17 @@ public class BankingService {
 	private AccountDAO accountDAO;
     private TransactionDAO transactionDAO;
 
-    public BankingService() {
+    public BankingService()
+	{
         accountDAO = new AccountDAO();
         transactionDAO = new TransactionDAO();
     }
 
-    public void deposit(int accountId, double amount) {
+    public void deposit(int accountId, double amount)
+	{
         Account account = accountDAO.getAccount(accountId);
-        if (account != null) {
+        if (account != null)
+		{
             double newBalance = account.getBalance() + amount;
             accountDAO.updateBalance(accountId, newBalance);
             Transaction transaction = new Transaction(accountId, "DEPOSIT", amount);
@@ -24,15 +27,20 @@ public class BankingService {
         }
     }
 
-    public void withdraw(int accountId, double amount) {
+    public void withdraw(int accountId, double amount)
+	{
         Account account = accountDAO.getAccount(accountId);
-        if (account != null) {
+        if (account != null)
+		{
             double newBalance = account.getBalance() - amount;
-            if (newBalance >= 0) {
+            if (newBalance >= 0)
+			{
                 accountDAO.updateBalance(accountId, newBalance);
                 Transaction transaction = new Transaction(accountId, "WITHDRAW", amount);
                 transactionDAO.addTransaction(transaction);
-            } else {
+            } 
+			else
+			{
                 System.out.println("Insufficient funds.");
             }
         }
