@@ -9,7 +9,8 @@ public class DatabaseConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "Manoj@2004";
 
-    public static Connection getConnection() {
+    public static Connection getConnection() 
+	{
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
