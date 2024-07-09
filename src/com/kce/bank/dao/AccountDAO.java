@@ -4,13 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import com.kce.bank.bean.Account;
 import com.kce.bank.util.DatabaseConnection;
 
-
 public class AccountDAO {
-	public void addAccount(Account account) {
+	public void addAccount(Account account) 
+	{
         String query = "INSERT INTO accounts (customer_id, account_type, balance) VALUES (?, ?, ?)";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -23,7 +22,8 @@ public class AccountDAO {
         }
     }
 
-    public Account getAccount(int accountId) {
+    public Account getAccount(int accountId) 
+	{
         Account account = null;
         String query = "SELECT * FROM accounts WHERE account_id = ?";
         try (Connection connection = DatabaseConnection.getConnection();
@@ -43,7 +43,8 @@ public class AccountDAO {
         return account;
     }
 
-    public void updateBalance(int accountId, double newBalance) {
+    public void updateBalance(int accountId, double newBalance) 
+	{
         String query = "UPDATE accounts SET balance = ? WHERE account_id = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
